@@ -1,18 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link as ReactRouterLink} from 'react-router-dom';
+import {Link as ChakraLink} from '@chakra-ui/react';
 
 export const Navigation = () => {
   return (
     <nav>
       <ul>
         <li>
-          <Link  to="/">Events</Link>
+          <ChakraLink as={ReactRouterLink}  to="/">Events</ChakraLink>
         </li>
         <li>
-          <Link to="/event/1">Event</Link>
+          <ChakraLink as={ReactRouterLink} to="/event/1">Event</ChakraLink>
         </li>
         <li>
-          <Link to="/event/new">New Event</Link>
+          <ChakraLink as={ReactRouterLink} to="/event/new">New Event</ChakraLink>
         </li>
       </ul>
     </nav>
