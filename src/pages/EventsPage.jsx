@@ -29,7 +29,7 @@ export const EventsPage = () => {
       <Input variant={'outline'} w={250} m={4} alignSelf={'center'} placeholder="search on name" onChange={handleChange} ></Input>
       <Flex gap={4} ml={4} flexDir={'column'} flexWrap={'wrap'} alignContent={'flex-start'}>
         {matchedEvents.map((event)=>(
-          <Box key={event.id} padding={3} border="blue">
+          <Box key={event.id} padding={3} w={250} borderWidth='2px' borderColor={'blackAlpha.200'}>
             <Text>{event.title}</Text>
 
           </Box>
