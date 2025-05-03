@@ -30,7 +30,7 @@ export const EventsPage = () => {
       <Flex gap={4} ml={4} flexDir={'column'} flexWrap={'wrap'} alignContent={'flex-start'}>
         {matchedEvents.map((event)=>(
           <Box key={event.id} padding={3} w={250} borderWidth='2px' borderColor={'blackAlpha.200'}>
-            <Text>{event.title}</Text>
+            <ChakraLink as={ReactRouterLink} to= {`event/${event.id}`}>{event.title}</ChakraLink>
             <Text>{event.description}</Text>
 
           </Box>
