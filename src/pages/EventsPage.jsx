@@ -16,9 +16,19 @@ export const EventsPage = () => {
   const {users, events, categories}= useLoaderData();
   const [searchField, setSearchField]=useState('');
 
-  const matchedEvents=events.filter((event)=>{
-    return event.title.toLowerCase().includes(searchField.toLowerCase())
-  });
+  let matchedEvents='';
+
+  if (searchField==''){
+    matchedEvents=events
+  }
+
+  else{
+    matchedEvents=events.filter((event)=>{
+      return event.categoryIds.includes(Number(searchField))
+    });
+  
+
+  }
 
   const handleChange=(event)=>{
     setSearchField(event.target.value);
@@ -26,7 +36,7 @@ export const EventsPage = () => {
   return (
     <Flex h='fit-content' w='100%' flexDir= {'column'} mb={2}>
       <Heading m={4}>lists of events</Heading>
-      <Input variant={'outline'} w={250} m={4} alignSelf={'center'} placeholder="search on name" onChange={handleChange} ></Input>
+      <Input variant={'outline'} w={250} m={4} alignSelf={'center'} placeholder="search on category" onChange={handleChange} ></Input>
       <Flex gap={4} ml={4} flexDir={'column'} flexWrap={'wrap'} alignContent={'flex-start'}>
         {matchedEvents.map((event)=>(
           <Box key={event.id} padding={3} w={250} borderWidth='2px' borderColor={'blackAlpha.200'}>
