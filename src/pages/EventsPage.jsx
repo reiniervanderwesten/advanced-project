@@ -25,7 +25,7 @@ export const EventsPage = () => {
   };
   return (
     <Flex h='fit-content' w='100%' flexDir= {'column'} mb={2}>
-      <Heading>lists of events</Heading>
+      <Heading m={4}>lists of events</Heading>
       <Input variant={'outline'} w={250} m={4} alignSelf={'center'} placeholder="search on name" onChange={handleChange} ></Input>
       <Flex gap={4} ml={4} flexDir={'column'} flexWrap={'wrap'} alignContent={'flex-start'}>
         {matchedEvents.map((event)=>(
