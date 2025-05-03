@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Link as ChakraLink, Flex, Box, Input } from '@chakra-ui/react';
+import { Heading, Link as ChakraLink, Flex, Box, Input, Text } from '@chakra-ui/react';
 import {Link as ReactRouterLink, useLoaderData} from 'react-router-dom';
 import { useState } from 'react';
 
@@ -27,6 +27,15 @@ export const EventsPage = () => {
     <>
       <Heading>lists of events</Heading>
       <Input variant={'outline'} w={250} m={4} alignSelf={'center'} placeholder="search on name" onChange={handleChange} ></Input>
+      <Flex gap={4} ml={4} flexDir={'column'} flexWrap={'wrap'} alignContent={'flex-start'}>
+        {matchedEvents.map((event)=>(
+          <Box key={event.id} padding={3} border="blue">
+            <Text>{event.title}</Text>
+
+          </Box>
+
+        ))}
+      </Flex>
     </>
   );
 };
