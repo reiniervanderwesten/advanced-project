@@ -1,6 +1,7 @@
 import React from 'react';
-import { Heading, Link as ChakraLink, Flex, Box } from '@chakra-ui/react';
+import { Heading, Link as ChakraLink, Flex, Box, Input } from '@chakra-ui/react';
 import {Link as ReactRouterLink, useLoaderData} from 'react-router-dom';
+import { useState } from 'react';
 
 export const loader=async()=>{
   const users= await fetch("http://localhost:3000/users");
@@ -13,9 +14,19 @@ export const loader=async()=>{
 
 export const EventsPage = () => {
   const {users, events, categories}= useLoaderData();
+  const [searchField, setSearchField]=useState('');
+
+  const matchedEvents=events.filter((event)=>{
+    return event.title.toLowerCase().includes(searchField.toLowerCase())
+  });
+
+  const handleChange=(event)=>{
+    setSearchField(event.target.value);
+  };
   return (
     <>
       <Heading>lists of events</Heading>
+      <Input variant={'outline'} w={250} m={4} alignSelf={'center'} placeholder="search on name" onChange={handleChange} ></Input>
     </>
   );
 };
