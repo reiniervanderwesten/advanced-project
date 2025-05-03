@@ -37,7 +37,7 @@ export const EventsPage = () => {
     <Flex h='fit-content' w='100%' flexDir= {'column'} mb={2}>
       <Heading m={4}>lists of events</Heading>
       <Input variant={'outline'} w={250} m={4} alignSelf={'center'} placeholder="search on category" onChange={handleChange} ></Input>
-      <Flex gap={4} ml={4} flexDir={'column'} flexWrap={'wrap'} alignContent={'flex-start'}>
+      <Flex gap={4} ml={4} width={'100%'} flexDir={'column'} flexWrap={'wrap'} alignContent={'flex-start'}>
         {matchedEvents.map((event)=>(
           <Box key={event.id} padding={3} w={250} borderWidth='2px' borderColor={'blackAlpha.200'}>
             <ChakraLink as={ReactRouterLink} to= {`event/${event.id}`}>{event.title}</ChakraLink>
