@@ -24,16 +24,20 @@ export const EventsPage = () => {
 
   
 
-  const resultaat= events.find(({title})=> title==="Trampoline party")
+  const resultaat= events.find(({title})=> title===searchTitle)
   if (resultaat){
-    resultaten= resultaat.title
+    resultaten= `Naam: ${resultaat.title}, number: ${resultaat.id}`
   }
 
   else{
-    resultaten="undefined"
+    resultaten="no event found"
   }
 
   console.log(resultaten);
+
+  const handleNaam=(event)=>{
+    setSearchTitle(event.target.value);
+  }
   
   
 
@@ -57,7 +61,8 @@ export const EventsPage = () => {
   return (
     <Flex h='fit-content' w='100%' flexDir= {'column'} mb={2}>
       <Heading m={4}>lists of events</Heading>
-      <Input variant= {'outline'} w={250} m={4} placeholder={"search on title"}></Input>
+      <Input variant= {'outline'} w={250} m={4} placeholder={"search on title"} onChange={handleNaam}></Input>
+      <Text m={4}>{resultaten}</Text>
       <Input variant={'outline'} w={250} m={4} alignSelf={'center'} placeholder="filter on category" onChange={handleChange} ></Input>
       <Flex gap={4} ml={4} width={'100%'} flexDir={'column'} flexWrap={'wrap'} alignContent={'flex-start'}>
         {matchedEvents.map((event)=>(
