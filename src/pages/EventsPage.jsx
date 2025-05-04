@@ -20,10 +20,20 @@ export const EventsPage = () => {
   const [searchField, setSearchField]=useState('');
   const [searchTitle, setSearchTitle]=useState('');
 
+  let resultaten='';
+
   
 
   const resultaat= events.find(({title})=> title==="Trampoline party")
-  console.log(resultaat.title);
+  if (resultaat){
+    resultaten= resultaat.title
+  }
+
+  else{
+    resultaten="undefined"
+  }
+
+  console.log(resultaten);
   
   
 
