@@ -7,14 +7,25 @@ export const loader=async()=>{
   const users= await fetch("http://localhost:3000/users");
   const events= await fetch("http://localhost:3000/events");
   const categories=await fetch("http://localhost:3000/categories")
+  
 
   return{users: await users.json(), events: await events.json(), categories: await categories.json()};
+
+  
 
 };
 
 export const EventsPage = () => {
   const {users, events, categories}= useLoaderData();
   const [searchField, setSearchField]=useState('');
+  const [searchTitle, setSearchTitle]=useState('');
+
+  
+
+  const resultaat= events.find(({title})=> title==="Trampoline party")
+  console.log(resultaat.title);
+  
+  
 
   let matchedEvents='';
 
@@ -36,12 +47,14 @@ export const EventsPage = () => {
   return (
     <Flex h='fit-content' w='100%' flexDir= {'column'} mb={2}>
       <Heading m={4}>lists of events</Heading>
-      <Input variant={'outline'} w={250} m={4} alignSelf={'center'} placeholder="search on category" onChange={handleChange} ></Input>
+      <Input variant= {'outline'} w={250} m={4} placeholder={"search on title"}></Input>
+      <Input variant={'outline'} w={250} m={4} alignSelf={'center'} placeholder="filter on category" onChange={handleChange} ></Input>
       <Flex gap={4} ml={4} width={'100%'} flexDir={'column'} flexWrap={'wrap'} alignContent={'flex-start'}>
         {matchedEvents.map((event)=>(
-          <Box key={event.id} padding={3} w={250} borderWidth='2px' borderColor={'blackAlpha.200'}>
+          <Box key={event.id} padding={3} w={250} borderWidth='2px' borderColor={'red.200'}>
             <ChakraLink as={ReactRouterLink} to= {`event/${event.id}`}>{event.title}</ChakraLink>
             <Text>{event.description}</Text>
+            
 
           </Box>
 
