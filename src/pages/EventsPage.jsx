@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Link as ChakraLink, Flex, Box, Input, Text } from '@chakra-ui/react';
+import { Heading, Link as ChakraLink, Flex, Box, Input, Text, Image } from '@chakra-ui/react';
 import {Link as ReactRouterLink, useLoaderData} from 'react-router-dom';
 import { useState } from 'react';
 
@@ -69,6 +69,7 @@ export const EventsPage = () => {
           <Box key={event.id} padding={3} w={250} borderWidth='2px' borderColor={'red.200'}>
             <ChakraLink as={ReactRouterLink} to= {`event/${event.id}`}>{event.title}</ChakraLink>
             <Text>{event.description}</Text>
+            <Image src={event.image} w={100} h={100} borderRadius={'md'} padding={2}></Image>
             
 
           </Box>
