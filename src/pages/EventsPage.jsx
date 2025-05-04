@@ -59,7 +59,7 @@ export const EventsPage = () => {
     setSearchField(event.target.value);
   };
 
-  const Datum=Date.parse("2023-03-10T18:00:00.000Z");
+  
   return (
     <Flex h='fit-content' w='100%' flexDir= {'column'} mb={2}>
       <Heading m={4}>lists of events</Heading>
@@ -72,7 +72,8 @@ export const EventsPage = () => {
             <ChakraLink as={ReactRouterLink} to= {`event/${event.id}`}>{event.title}</ChakraLink>
             <Text>{event.description}</Text>
             <Image src={event.image} w={100} h={100} borderRadius={'md'} padding={2}></Image>
-            <Text>{event.startTime.slice(0,10)}</Text>
+            <Text>Begin: {event.startTime.slice(0,10)}, {event.startTime.slice(11,16)}</Text>
+            <Text>Einde: {event.endTime.slice(0,10)}, {event.endTime.slice(11,16)}</Text>
             
 
           </Box>
