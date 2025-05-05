@@ -14,6 +14,7 @@ export const EventPage = () => {
   return (
     <Flex h="fit-content" w="100" flexDir={'column'} mt={2}>
       <Heading m={4}>Event</Heading>
+      <Text>g</Text>
 
     </Flex>
 
