@@ -3,6 +3,13 @@ import { Heading, Text, Image } from '@chakra-ui/react';
 import {Link as ReactRouterLink, useLoaderData, useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 
+export const loader=async({params})=>{
+  const users=await fetch(`http://localhost:3000/users`);
+  const event= await fetch(`http://localhost:3000/events/${params.eventId}`);
+
+  return {users: await users.json(), event: await event.json()};
+};
+
 export const EventPage = () => {
   return <Heading>Event</Heading>;
 };
