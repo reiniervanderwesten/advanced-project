@@ -10,13 +10,25 @@ export const NewEvent=()=>{
         setDatum(event.target.value);
     }
 
-    console.log(datum);
+    const eerste="1,2,3";
+
+    const array=eerste.split(',');
+    console.log(array);
+    console.log(array.length);
+    const getal=array.shift();
+    console.log(getal);
+    console.log(typeof(getal));
+
+    
+    
 
     return (
         <>
 
             <Heading>New Event</Heading>
-            <Input variant={'outline'} w={250} placeholder="datum experiment" value={datum} onChange={handleChange}></Input>
+            <Input variant={'outline'} type='number' w={250} placeholder="datum experiment" value={datum} onChange={handleChange}></Input>
+            
+            
         
         
         </>
