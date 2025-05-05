@@ -71,7 +71,7 @@ export const EventsPage = () => {
           <Box key={event.id} padding={3} w={250} borderWidth='2px' borderColor={'red.200'}>
             <ChakraLink as={ReactRouterLink} to= {`event/${event.id}`} color={'blue'}>{event.title}</ChakraLink>
             <Text>{event.description}</Text>
-            <Image src={event.image} w={100} h={100} borderRadius={'md'} padding={2}></Image>
+            <Image src={event.image} w={100} h={100} borderRadius={'md'} m={2}></Image>
             <Text>Begin: {event.startTime.slice(0,10)}, {event.startTime.slice(11,16)}</Text>
             <Text>Einde: {event.endTime.slice(0,10)}, {event.endTime.slice(11,16)}</Text>
             <Text color={'green.500'}>categories: {event.categoryIds.join()}</Text>

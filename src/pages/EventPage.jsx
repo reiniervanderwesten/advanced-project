@@ -17,6 +17,8 @@ export const EventPage = () => {
       <Heading m={4}>Event</Heading>
       <Box alignSelf={'center'}>
         <Text>{event.title}</Text>
+        <Text>{event.description}</Text>
+        <Image src={event.image} w={200} h={200} borderRadius={'md'} m={2}></Image>
 
       </Box>
       
