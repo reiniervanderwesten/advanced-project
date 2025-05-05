@@ -85,7 +85,7 @@
     },
     {
       "id": 6,
-      "createdBy": 5,
+      "createdBy": 3,
       "title": "Board games night",
       "description": "Roll the dice and join the fun!",
       "image": "https://wincacademy.github.io/webpages/media/pexels-tima-miroshnichenko-6598746.jpg",
@@ -111,7 +111,7 @@
     },
     {
       "id": 8,
-      "createdBy": 6,
+      "createdBy": 2,
       "title": "Nature walk",
       "description": "Connect with nature and clear your mind.",
       "image": "https://wincacademy.github.io/webpages/media/hiking.png",
