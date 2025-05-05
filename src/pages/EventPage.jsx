@@ -23,6 +23,7 @@ export const EventPage = () => {
         <Text>Einde: {event.endTime.slice(0,10)}, {event.endTime.slice(11,16)}</Text>
         <Text color= {'green.500'}>categories: {event.categoryIds.join()}</Text>
         <Text>{users.find((user)=>user.id==event.createdBy).name}</Text>
+        <Image src={users.find((user)=>user.id==event.createdBy).image} w={200} h={200} borderRadius={'md'} m={2}></Image>
         
 
       </Box>
