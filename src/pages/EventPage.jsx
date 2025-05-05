@@ -19,6 +19,9 @@ export const EventPage = () => {
         <Text>{event.title}</Text>
         <Text>{event.description}</Text>
         <Image src={event.image} w={200} h={200} borderRadius={'md'} m={2}></Image>
+        <Text>Begin: {event.startTime.slice(0,10)}, {event.startTime.slice(11,16)}</Text>
+        <Text>Einde: {event.endTime.slice(0,10)}, {event.endTime.slice(0,11)}</Text>
+        <Text color= {'green.500'}>categories: {event.categoryIds.join()}</Text>
 
       </Box>
       
