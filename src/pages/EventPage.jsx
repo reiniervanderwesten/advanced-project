@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Text, Image } from '@chakra-ui/react';
+import { Heading, Text, Image, Flex } from '@chakra-ui/react';
 import {Link as ReactRouterLink, useLoaderData, useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 
@@ -11,5 +11,11 @@ export const loader=async({params})=>{
 };
 
 export const EventPage = () => {
-  return <Heading>Event</Heading>;
+  return (
+    <Flex h="fit-content" w="100" flexDir={'column'} mt={2}>
+      <Heading m={4}>Event</Heading>
+
+    </Flex>
+
+  )
 };
