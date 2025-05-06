@@ -24,6 +24,10 @@ export const NewEvent=()=>{
 
     console.log(numberArray);
 
+    const firstnumber=numberArray.shift();
+
+    console.log(typeof(firstnumber))
+
     
     
 
