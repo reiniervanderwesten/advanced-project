@@ -28,6 +28,8 @@ export const NewEvent=()=>{
 
     console.log(typeof(firstnumber))
 
+    console.log(typeof(datum));
+
     
     
 
@@ -38,7 +40,7 @@ export const NewEvent=()=>{
         <>
 
             <Heading>New Event</Heading>
-            <Input variant={'outline'} type='number' w={250} placeholder="datum experiment" value={datum} onChange={handleChange}></Input>
+            <Input variant={'outline'} type="number" w={250} placeholder="datum experiment" value={datum} onChange={handleChange}></Input>
             
             
             
