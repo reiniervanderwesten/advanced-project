@@ -14,10 +14,18 @@ export const NewEvent=()=>{
 
     const array=eerste.split(',');
     console.log(array);
-    console.log(array.length);
-    const getal=array.shift();
-    console.log(getal);
-    console.log(typeof(getal));
+    const length= array.length;
+
+    let numberArray=[];
+
+    for(let i=0; i<length; i++){
+        numberArray.push(parseInt(array[i]))
+    }
+
+    console.log(numberArray);
+
+    
+    
 
     
     
@@ -27,6 +35,7 @@ export const NewEvent=()=>{
 
             <Heading>New Event</Heading>
             <Input variant={'outline'} type='number' w={250} placeholder="datum experiment" value={datum} onChange={handleChange}></Input>
+            
             
             
         
