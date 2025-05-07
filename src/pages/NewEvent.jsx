@@ -10,23 +10,9 @@ export const NewEvent=()=>{
         setDatum(event.target.value);
     }
 
-    const eerste="1,2,3";
+    
 
-    const array=eerste.split(',');
-    console.log(array);
-    const length= array.length;
-
-    let numberArray=[];
-
-    for(let i=0; i<length; i++){
-        numberArray.push(parseInt(array[i]))
-    }
-
-    console.log(numberArray);
-
-    const firstnumber=numberArray.shift();
-
-    console.log(typeof(firstnumber))
+    
 
     console.log(typeof(datum));
 
@@ -40,7 +26,7 @@ export const NewEvent=()=>{
         <>
 
             <Heading>New Event</Heading>
-            <Input variant={'outline'} type="number" w={250} placeholder="datum experiment" value={datum} onChange={handleChange}></Input>
+            <Input variant={'outline'}  w={250} placeholder="datum experiment" value={datum} onChange={handleChange}></Input>
             
             
             
