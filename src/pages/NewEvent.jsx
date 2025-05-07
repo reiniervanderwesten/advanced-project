@@ -14,6 +14,7 @@ export const NewEvent=()=>{
 
     
 
+    console.log(datum);
     console.log(typeof(datum));
 
     
@@ -26,7 +27,7 @@ export const NewEvent=()=>{
         <>
 
             <Heading>New Event</Heading>
-            <Input variant={'outline'}  w={250} placeholder="datum experiment" value={datum} onChange={handleChange}></Input>
+            <Input variant={'outline'}  type= 'url' w={250} placeholder="datum experiment" value={datum} onChange={handleChange}></Input>
             
             
             
