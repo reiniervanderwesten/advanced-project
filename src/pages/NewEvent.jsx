@@ -15,16 +15,15 @@ export const NewEvent=()=>{
         setGetal(event.target.value);
     }
 
-    
+    const datum1=datum.slice(0,10);
+    const datum2=datum.slice(11,16);
+
 
     
 
-    console.log(getal);
-    console.log(typeof(getal));
+    
 
-    const getalteken=typeof(getal);
-    const echtgetal=Number(getal);
-    const realnumber=typeof(echtgetal)
+    
 
 
 
@@ -38,13 +37,18 @@ export const NewEvent=()=>{
         <>
 
             <Heading>New Event</Heading>
-            <Input variant={'outline'}  type= 'url' w={250} m= {2} placeholder="datum experiment" value={datum} onChange={handleChange}></Input>
+            <Input variant={'outline'}  type= 'datetime-local' w={250} m= {2} placeholder="datum experiment" value={datum} onChange={handleChange}></Input>
             <NumberInput>
                 <NumberInputField variant={'outline'} placeholder="getal experiment" w={250} m={2} value={getal} onChange={handleGetal}></NumberInputField>
             </NumberInput>
 
-            <Text>{getalteken}</Text>
-            <Text>{realnumber}</Text>
+            <Text>{datum}</Text>
+            <Text>{datum1}</Text>
+            <Text>{datum2}</Text>
+            
+
+            
+            
             
             
             
