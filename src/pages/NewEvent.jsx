@@ -18,6 +18,8 @@ export const NewEvent=()=>{
     const datum1=datum.slice(0,10);
     const datum2=datum.slice(11,16);
 
+    const getal2= getal+"e";
+
 
     
 
@@ -45,6 +47,7 @@ export const NewEvent=()=>{
             <Text>{datum}</Text>
             <Text>{datum1}</Text>
             <Text>{datum2}</Text>
+            <Text>{getal2}</Text>
             
 
             
