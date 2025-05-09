@@ -1,24 +1,21 @@
 import React from 'react';
-import {Heading, Input, Text, NumberInput, NumberInputField} from '@chakra-ui/react';
+import {Heading, Input, Text, NumberInput, NumberInputField, Button} from '@chakra-ui/react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const NewEvent=()=>{
+    const [created, setCreated]=useState('');
+    const [title, setTitle]=useState('');
+    const [description, setDescription]=useState('');
+    const [image, setImage]=useState('');
+    const [category, setCategory]=useState('');
+    const [location, setLocation]=useState('');
+    const [startTime, setStartTime]=useState('');
+    const [endTime, setEndTime]=useState('');
 
-    const [datum, setDatum]=useState('');
-    const [getal, setGetal]=useState('');
+    const navigate= useNavigate();
 
-    const handleChange=(event)=>{
-        setDatum(event.target.value);
-    }
-
-    const handleGetal=(event)=>{
-        setGetal(event.target.value);
-    }
-
-    const datum1=datum.slice(0,10);
-    const datum2=datum.slice(11,16);
-
-    const getal2= getal+"e";
+    
 
 
     
@@ -39,15 +36,8 @@ export const NewEvent=()=>{
         <>
 
             <Heading>New Event</Heading>
-            <Input variant={'outline'}  type= 'datetime-local' w={250} m= {2} placeholder="datum experiment" value={datum} onChange={handleChange}></Input>
-            <NumberInput>
-                <NumberInputField variant={'outline'} placeholder="getal experiment" w={250} m={2} value={getal} onChange={handleGetal}></NumberInputField>
-            </NumberInput>
-
-            <Text>{datum}</Text>
-            <Text>{datum1}</Text>
-            <Text>{datum2}</Text>
-            <Text>{getal2}</Text>
+            
+            
             
 
             
