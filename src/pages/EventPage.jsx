@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heading, Text, Image, Flex, Box, Button } from '@chakra-ui/react';
+import {Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure} from '@chakra-ui/react'
 import {Link as ReactRouterLink, useLoaderData, useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 
@@ -13,6 +14,7 @@ export const loader=async({params})=>{
 export const EventPage = () => {
   const {users, event}=useLoaderData();
   const navigate=useNavigate();
+  const {isOpen, onOpen, onClose}=useDisclosure();
 
   const destroyEvent=async(id)=>{
     await fetch(`http://localhost:3000/events/${id}`,{
@@ -38,7 +40,28 @@ export const EventPage = () => {
         
 
       </Box>
-      <Button w= {'fit-content'} onClick={()=>destroyEvent(event.id)}> verwijder Event</Button>
+      
+      <Button onClick={onOpen} w={'fit-content'} m={4}>Delete?</Button>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Confirm your Delete</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Text>Delete </Text>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="teal" mr={4} onClick={()=>destroyEvent(event.id)}>
+              Confirm
+            </Button>
+            <Button variant="ghost" onClick={onClose}>
+              Cancel
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+
       
 
     </Flex>
