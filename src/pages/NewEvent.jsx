@@ -1,5 +1,5 @@
 import React from 'react';
-import {Heading, Input, Text, NumberInput, NumberInputField, Button, Stack} from '@chakra-ui/react';
+import {Heading, Input, NumberInput, NumberInputField, Button, Stack} from '@chakra-ui/react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,9 +11,62 @@ export const NewEvent=()=>{
     const [category, setCategory]=useState('');
     const [location, setLocation]=useState('');
     const [startTime, setStartTime]=useState('');
-    const [endTime, setEndTime]=useState('');
+    const [endTime, setEndTime]=useState(''); 
+    
+    
+    
+    
+        
+    
+
+    
+
 
     const navigate= useNavigate();
+
+    const createEvent= async eventt=>{
+        const response= await fetch("http://localhost:3000/events",{
+            method: "POST",
+            body: JSON.stringify(eventt),
+            headers: {"Content-Type": "application/json;charset=utf-8"},
+        });
+
+        eventt.id= (await response.json()).id;
+    };
+
+    const handleSubmit=event=>{
+        event.preventDefault();
+
+        const createdBy= Number(created);
+        const categorieId=category.split(',');
+              
+        
+        let categoryIds=[];
+
+        for(let i=0; i<categorieId.length; i++){
+            categoryIds.push(parseInt(categorieId[i]))
+        }
+
+        createEvent({createdBy, title, description, image, categoryIds, location, startTime, endTime});
+        setCreated("");
+        setTitle("");
+        setDescription("");
+        setImage("");
+        setCategory("");
+        setLocation("");
+        setStartTime("");
+        setEndTime("");
+
+        navigate('/');
+
+        
+
+    
+    
+
+    };
+
+    
 
     
     
@@ -23,7 +76,7 @@ export const NewEvent=()=>{
         <Stack padding={3} flexDirection={'column'}>
             <Heading>New Event</Heading>
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 <NumberInput>
                     <NumberInputField variant={'outline'} placeholder={'number created by'} w= {250} value={created} onChange={e=>setCreated(e.target.value)} required="required"/>
                 </NumberInput>

@@ -33,7 +33,7 @@ export const EventsPage = () => {
     resultaten="no event found"
   }
 
-  console.log(resultaten);
+  
 
   const handleNaam=(event)=>{
     setSearchTitle(event.target.value);
