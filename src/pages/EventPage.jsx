@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Text, Image, Flex, Box } from '@chakra-ui/react';
+import { Heading, Text, Image, Flex, Box, Button } from '@chakra-ui/react';
 import {Link as ReactRouterLink, useLoaderData, useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 
@@ -12,6 +12,16 @@ export const loader=async({params})=>{
 
 export const EventPage = () => {
   const {users, event}=useLoaderData();
+  const navigate=useNavigate();
+
+  const destroyEvent=async(id)=>{
+    await fetch(`http://localhost:3000/events/${id}`,{
+      method: "DELETE",
+      headers: {"Content-Type": "application/json;charset=utf-8"},
+    });
+
+    navigate('/');
+  };
   
   return (
     <Flex h="fit-content" w="100" flexDir={'column'} mt={2}>
@@ -28,6 +38,7 @@ export const EventPage = () => {
         
 
       </Box>
+      <Button w= {'fit-content'} onClick={()=>destroyEvent(event.id)}> verwijder Event</Button>
       
 
     </Flex>
