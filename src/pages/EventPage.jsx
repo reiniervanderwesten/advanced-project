@@ -63,6 +63,14 @@ export const EventPage = () => {
             <NumberInputField variant={'outline'} placeholder={'number created by'} w={250} value={created} onChange={e=>setCreated(e.target.value)} required="required"/>
           </NumberInput>
           <Input variant={'outline'} type='text' placeholder='title' w={250} value={titel} onChange={e=>setTitel(e.target.value)} required="required" m={2}></Input>
+          <Input variant={'outline'} type="text" placeholder={'description'} w={250} value={beschrijving} onChange={e=>setBeschrijving(e.target.value)} required="required" m={2}></Input>
+          <Input variant={'outline'} type="url" placeholder={'link to image'} w={250} value={afbeelding} onChange={e=>setAfbeelding(e.target.value)} required="required" m={2}></Input>
+          <Input variant={'outline'} type="text" placeholder={'catgories'} w={250} value={category} onChange={e=>setCategory(e.target.value)} required="required" m={2}></Input>
+          <Input variant={'outline'} type="text" placeholder={'location'} w={250} value={locatie} onChange={e=>setlocatie(e.target.value)} required="required" m={2}></Input>
+          
+          <Input variant={'outline'} type={'datetime-local'} w={250} value={startijd} onChange={e=>setStarttijd(e.target.value)} required="required" m={2}></Input>
+          <Input variant={'outline'} type={'datetime-local'} w={250} value={eindtjd} onChange={e=> setEindtijd(e.target.value)} required="required" m={2}></Input>
+          <Button margin={4} type="submit">Edit</Button>
         </form>
 
       </Stack>
