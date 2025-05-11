@@ -22,8 +22,28 @@ export const EventPage = () => {
   const [afbeelding, setAfbeelding]=useState('');
   const [category, setCategory]=useState('');
   const [locatie, setlocatie]= useState('');
-  const [startijd, setStarttijd]= useState('');
-  const [eindtjd, setEindtijd]= useState('');
+  const [starttijd, setStarttijd]= useState('');
+  const [eindtijd, setEindtijd]= useState('');
+
+  const handleSubmit=(eventt)=>{
+    
+    eventt.preventDefault();
+    const id=event.id;
+
+    const gemaaktDoor=Number(created);
+
+    fetch(`http://localhost:3000/events/${id}`, {
+      method: "PATCH",
+      headers: {"Content-Type": "application/json;charset=utf-8"},
+      body: JSON.stringify({
+        createdBy:gemaaktDoor,
+        title: titel,
+        description: beschrijving,
+        startTime: starttijd
+      })
+
+    });
+  }
 
 
   
@@ -58,7 +78,7 @@ export const EventPage = () => {
       </Box>
 
       <Stack m={4} >
-        <form>
+        <form onSubmit={handleSubmit}>
           <NumberInput m={2}>
             <NumberInputField variant={'outline'} placeholder={'number created by'} w={250} value={created} onChange={e=>setCreated(e.target.value)} required="required"/>
           </NumberInput>
@@ -70,13 +90,13 @@ export const EventPage = () => {
           <FormControl>
 
             <FormLabel>Starttijd</FormLabel>
-            <Input variant={'outline'} type={'datetime-local'} w={250} value={startijd} onChange={e=>setStarttijd(e.target.value)} required="required" m={2}></Input>                   
+            <Input variant={'outline'} type={'datetime-local'} w={250} value={starttijd} onChange={e=>setStarttijd(e.target.value)} required="required" m={2}></Input>                   
                             
 
             
           </FormControl>
           
-          <Input variant={'outline'} type={'datetime-local'} w={250} value={eindtjd} onChange={e=> setEindtijd(e.target.value)} required="required" m={2}></Input>
+          <Input variant={'outline'} type={'datetime-local'} w={250} value={eindtijd} onChange={e=> setEindtijd(e.target.value)} required="required" m={2}></Input>
           <Button margin={4} type="submit">Edit</Button>
         </form>
 
