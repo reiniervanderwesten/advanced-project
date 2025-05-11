@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Text, Image, Flex, Box, Button } from '@chakra-ui/react';
+import { Heading, Text, Image, Flex, Box, Button} from '@chakra-ui/react';
 import {Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure} from '@chakra-ui/react'
 import {Link as ReactRouterLink, useLoaderData, useNavigate} from 'react-router-dom';
 import { useState } from 'react';
@@ -25,6 +25,9 @@ export const EventPage = () => {
   const [startijd, setStarttijd]= useState('');
   const [eindtjd, setEindtijd]= useState('');
 
+
+  
+
   
 
   const destroyEvent=async(id)=>{
@@ -38,7 +41,9 @@ export const EventPage = () => {
   
   return (
     <Flex h="fit-content" w="100" flexDir={'column'} mt={2}>
-      <Heading m={4}>Event</Heading>
+      <Heading m={4}>Events</Heading>
+      <Heading m={4}>test</Heading>
+      
       <Box alignSelf={'center'}>
         <Text>{event.title}</Text>
         <Text>{event.description}</Text>
@@ -51,6 +56,8 @@ export const EventPage = () => {
         
 
       </Box>
+
+      
       
       <Button onClick={onOpen} w={'fit-content'} m={4}>Delete?</Button>
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -72,6 +79,8 @@ export const EventPage = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
+
+      
 
       
 
