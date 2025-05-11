@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Text, Image, Flex, Box, Button, Stack, Input, NumberInput, NumberInputField} from '@chakra-ui/react';
+import { Heading, Text, Image, Flex, Box, Button, Stack, Input, NumberInput, NumberInputField, FormControl, FormLabel} from '@chakra-ui/react';
 import {Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure} from '@chakra-ui/react'
 import {Link as ReactRouterLink, useLoaderData, useNavigate} from 'react-router-dom';
 import { useState } from 'react';
@@ -67,7 +67,14 @@ export const EventPage = () => {
           <Input variant={'outline'} type="url" placeholder={'link to image'} w={250} value={afbeelding} onChange={e=>setAfbeelding(e.target.value)} required="required" m={2}></Input>
           <Input variant={'outline'} type="text" placeholder={'catgories'} w={250} value={category} onChange={e=>setCategory(e.target.value)} required="required" m={2}></Input>
           <Input variant={'outline'} type="text" placeholder={'location'} w={250} value={locatie} onChange={e=>setlocatie(e.target.value)} required="required" m={2}></Input>
-          
+          <FormControl>
+
+            <FormLabel>Starttijd</FormLabel>
+            <Input variant={'outline'} type={'datetime-local'} w={250} value={startijd} onChange={e=>setStarttijd(e.target.value)} required="required" m={2}></Input>                   
+                            
+
+            
+          </FormControl>
           <Input variant={'outline'} type={'datetime-local'} w={250} value={startijd} onChange={e=>setStarttijd(e.target.value)} required="required" m={2}></Input>
           <Input variant={'outline'} type={'datetime-local'} w={250} value={eindtjd} onChange={e=> setEindtijd(e.target.value)} required="required" m={2}></Input>
           <Button margin={4} type="submit">Edit</Button>
