@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Text, Image, Flex, Box, Button} from '@chakra-ui/react';
+import { Heading, Text, Image, Flex, Box, Button, Stack, Input, NumberInput, NumberInputField} from '@chakra-ui/react';
 import {Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure} from '@chakra-ui/react'
 import {Link as ReactRouterLink, useLoaderData, useNavigate} from 'react-router-dom';
 import { useState } from 'react';
@@ -56,6 +56,16 @@ export const EventPage = () => {
         
 
       </Box>
+
+      <Stack m={4} >
+        <form>
+          <NumberInput m={2}>
+            <NumberInputField variant={'outline'} placeholder={'number created by'} w={250} value={created} onChange={e=>setCreated(e.target.value)} required="required"/>
+          </NumberInput>
+          <Input variant={'outline'} type='text' placeholder='title' w={250} value={titel} onChange={e=>setTitel(e.target.value)} required="required" m={2}></Input>
+        </form>
+
+      </Stack>
 
       
       
