@@ -134,6 +134,20 @@
       "location": "Downtown Bowling Alley",
       "startTime": "2023-03-19T18:00:00.000Z",
       "endTime": "2023-03-19T21:00:00.000Z"
+    },
+    {
+      "id": "69dd",
+      "createdBy": 1,
+      "title": "Asterix",
+      "description": "everzwijnen jagen",
+      "image": "https://wincacademy.github.io/webpages/media/pexels-rnnzeravac-9273055.jpg",
+      "categoryIds": [
+        1,
+        2
+      ],
+      "location": "bos",
+      "startTime": "2025-05-01T21:07",
+      "endTime": "2025-05-03T19:07"
     }
   ],
   "categories": [
