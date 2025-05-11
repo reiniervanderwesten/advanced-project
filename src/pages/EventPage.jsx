@@ -16,6 +16,17 @@ export const EventPage = () => {
   const navigate=useNavigate();
   const {isOpen, onOpen, onClose}=useDisclosure();
 
+  const [created,setCreated]= useState('');
+  const [titel, setTitel]= useState('');
+  const [beschrijving, setBeschrijving]= useState('');
+  const [afbeelding, setAfbeelding]=useState('');
+  const [category, setCategory]=useState('');
+  const [locatie, setlocatie]= useState('');
+  const [startijd, setStarttijd]= useState('');
+  const [eindtjd, setEindtijd]= useState('');
+
+  
+
   const destroyEvent=async(id)=>{
     await fetch(`http://localhost:3000/events/${id}`,{
       method: "DELETE",
