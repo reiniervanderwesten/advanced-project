@@ -25,7 +25,7 @@ export const EventPage = () => {
   const [starttijd, setStarttijd]= useState('');
   const [eindtijd, setEindtijd]= useState('');
 
-  const handleSubmit=(eventt)=>{
+  const handleSubmit= (eventt)=>{
     
     eventt.preventDefault();
     const id=event.id;
@@ -43,6 +43,15 @@ export const EventPage = () => {
       })
 
     });
+
+    setCreated("");
+    setTitel("");
+    setBeschrijving("");
+    setAfbeelding("");
+    setCategory("");
+    setlocatie("");
+    setStarttijd("");
+    setEindtijd("");
   }
 
 
