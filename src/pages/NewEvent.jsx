@@ -1,5 +1,5 @@
 import React from 'react';
-import {Heading, Input, NumberInput, NumberInputField, Button, Stack} from '@chakra-ui/react';
+import {Heading, Input, NumberInput, NumberInputField, Button, Stack, FormControl, FormLabel} from '@chakra-ui/react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -57,9 +57,7 @@ export const NewEvent=()=>{
         setStartTime("");
         setEndTime("");
 
-        navigate('/');
-
-        
+        navigate('/');       
 
     
     
@@ -90,10 +88,17 @@ export const NewEvent=()=>{
                 <Input variant={'outline'} type='text' placeholder={'belongs to category(ies)'} w={250} value={category} onChange={e=>setCategory(e.target.value)} required="required"></Input>
 
                 <Input variant={'outline'} type='text' placeholder={'location'} w={250} value={location} onChange={e=>setLocation(e.target.value)} required="required"></Input>
+                <FormControl>
+                    <FormLabel>Starttijd</FormLabel>
+                    <Input variant={'outline'} type={'datetime-local'}  w={250} value={startTime} onChange={e=>setStartTime(e.target.value)} required="required"></Input>
+                </FormControl>
 
-                <Input variant={'outline'} type={'datetime-local'}  w={250} value={startTime} onChange={e=>setStartTime(e.target.value)} required="required"></Input>
+                <FormControl>
+                    <FormLabel>Eindtijd</FormLabel>
+                    <Input variant={'outline'} type={'datetime-local'} w={250} value={endTime} onChange={e=>setEndTime(e.target.value)} required="required"></Input>
+                </FormControl>
 
-                <Input variant={'outline'} type={'datetime-local'} w={250} value={endTime} onChange={e=>setEndTime(e.target.value)} required="required"></Input>
+                
                 <Button margin={4} type="submit">Add Event</Button>
             </form>
         </Stack>
