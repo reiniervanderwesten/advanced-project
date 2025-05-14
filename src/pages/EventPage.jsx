@@ -25,6 +25,12 @@ export const EventPage = () => {
   const [starttijd, setStarttijd]= useState('');
   const [eindtijd, setEindtijd]= useState('');
 
+  const [title, setTitle]=useState(event.title);
+  const [description, setDescription]= useState(event.description);
+  const [image, setImage]=useState(event.image);
+  const [startTime, setStartTime]= useState(event.startTime);
+  const [endTime, setEndTime]=useState(event.endTime);
+
   const handleSubmit= (eventt)=>{
     
     eventt.preventDefault();
@@ -54,6 +60,12 @@ export const EventPage = () => {
       })
 
     });
+
+    setTitle(titel);
+    setDescription(beschrijving);
+    setImage(afbeelding);
+    setStartTime(starttijd);
+    setEndTime(eindtijd);
 
     setCreated("");
     setTitel("");
@@ -85,11 +97,11 @@ export const EventPage = () => {
       <Heading m={4}>test</Heading>
       
       <Box alignSelf={'center'}>
-        <Text>{event.title}</Text>
-        <Text>{event.description}</Text>
-        <Image src={event.image} w={200} h={200} borderRadius={'md'} m={2}></Image>
-        <Text>Begin: {event.startTime.slice(0,10)}, {event.startTime.slice(11,16)}</Text>
-        <Text>Einde: {event.endTime.slice(0,10)}, {event.endTime.slice(11,16)}</Text>
+        <Text>{title}</Text>
+        <Text>{description}</Text>
+        <Image src={image} w={200} h={200} borderRadius={'md'} m={2}></Image>
+        <Text>Begin: {startTime.slice(0,10)}, {startTime.slice(11,16)}</Text>
+        <Text>Einde: {endTime.slice(0,10)}, {endTime.slice(11,16)}</Text>
         <Text color= {'green.500'}>categories: {event.categoryIds.join()}</Text>
         <Text>{users.find((user)=>user.id==event.createdBy).name}</Text>
         <Image src={users.find((user)=>user.id==event.createdBy).image} w={200} h={200} borderRadius={'md'} m={2}></Image>
