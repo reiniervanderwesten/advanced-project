@@ -31,6 +31,12 @@ export const EventPage = () => {
     const id=event.id;
 
     const gemaaktDoor=Number(created);
+    const categorieID= category.split(',');
+    let categorieNummers=[];
+
+    for (let i=0; i<categorieID.length; i++){
+      categorieNummers.push(parseInt(categorieID[i]))
+    }
 
     fetch(`http://localhost:3000/events/${id}`, {
       method: "PATCH",
@@ -39,7 +45,12 @@ export const EventPage = () => {
         createdBy:gemaaktDoor,
         title: titel,
         description: beschrijving,
-        startTime: starttijd
+        image: afbeelding,
+        categoryIds: categorieNummers,
+        location: locatie,
+        startTime: starttijd,
+        endTime: eindtijd
+        
       })
 
     });

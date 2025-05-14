@@ -137,17 +137,17 @@
     },
     {
       "id": "69dd",
-      "createdBy": 2,
-      "title": "gggg",
-      "description": "rr",
-      "image": "https://wincacademy.github.io/webpages/media/pexels-rnnzeravac-9273055.jpg",
+      "createdBy": 1,
+      "title": "laats",
+      "description": "keer",
+      "image": "https://i.pinimg.com/736x/3d/2f/af/3d2faf4e3188d34a9fcdc00df59e77b0.jpg",
       "categoryIds": [
-        1,
-        2
+        2,
+        3
       ],
-      "location": "bos",
-      "startTime": "2025-05-14T20:53",
-      "endTime": "2025-05-03T19:07"
+      "location": "ster",
+      "startTime": "2025-05-01T19:24",
+      "endTime": "2025-05-24T19:24"
     }
   ],
   "categories": [
