@@ -137,17 +137,16 @@
     },
     {
       "id": "69dd",
-      "createdBy": 2,
-      "title": "juist",
-      "description": "en nu",
+      "createdBy": 1,
+      "title": "nog",
+      "description": "keer",
       "image": "https://wincacademy.github.io/webpages/media/pexels-viktoria-alipatova-1083711-2130137.jpg",
       "categoryIds": [
-        2,
         3
       ],
-      "location": "hier thuis",
-      "startTime": "2025-06-03T14:51",
-      "endTime": "2025-07-25T14:51"
+      "location": "serre",
+      "startTime": "2025-05-25T17:06",
+      "endTime": "2025-06-08T17:06"
     }
   ],
   "categories": [

@@ -46,22 +46,28 @@ export const EventPage = () => {
       categorieNummers.push(parseInt(categorieID[i]))
     }
 
-    fetch(`http://localhost:3000/events/${id}`, {
-      method: "PATCH",
-      headers: {"Content-Type": "application/json;charset=utf-8"},
-      body: JSON.stringify({
-        createdBy:gemaaktDoor,
-        title: titel,
-        description: beschrijving,
-        image: afbeelding,
-        categoryIds: categorieNummers,
-        location: locatie,
-        startTime: starttijd,
-        endTime: eindtijd
+    try{
+      fetch(`http://localhost:3000/events/${id}`, {
+        method: "PATCH",
+        headers: {"Content-Type": "application/json;charset=utf-8"},
+        body: JSON.stringify({
+          createdBy:gemaaktDoor,
+          title: titel,
+          description: beschrijving,
+          image: afbeelding,
+          categoryIds: categorieNummers,
+          location: locatie,
+          startTime: starttijd,
+          endTime: eindtijd
         
-      })
+        })
 
-    });
+      });
+    } catch(err){
+      console.log(err);
+    }
+
+    
 
     setCreatedBy(gemaaktDoor);
     setTitle(titel);
@@ -80,7 +86,6 @@ export const EventPage = () => {
     setStarttijd("");
     setEindtijd("");
   }
-
 
   
 
@@ -174,3 +179,7 @@ export const EventPage = () => {
 
   )
 };
+
+
+
+
