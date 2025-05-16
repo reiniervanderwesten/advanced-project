@@ -64,7 +64,23 @@ export const EventPage = () => {
         })
 
       });
+
+      toast({
+        
+        title: 'gegevens',
+        description: "gegevens succesvol in database",
+        position: 'top-left',
+        duration: 4000,
+        status: 'success'
+      })
     } catch(err){
+      toast({
+        title: 'gegevens',
+        description: 'gegevens niet opgenomen in database',
+        position: 'top-left',
+        duration: 4000,
+        status: 'error'
+      })
       console.log(err);
     }
 
