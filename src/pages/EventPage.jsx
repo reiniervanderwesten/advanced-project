@@ -25,6 +25,7 @@ export const EventPage = () => {
   const [starttijd, setStarttijd]= useState('');
   const [eindtijd, setEindtijd]= useState('');
 
+  const [createdBy, setCreatedBy]=useState(event.createdBy);
   const [title, setTitle]=useState(event.title);
   const [description, setDescription]= useState(event.description);
   const [image, setImage]=useState(event.image);
@@ -61,6 +62,7 @@ export const EventPage = () => {
 
     });
 
+    setCreatedBy(gemaaktDoor);
     setTitle(titel);
     setDescription(beschrijving);
     setImage(afbeelding);
@@ -103,8 +105,8 @@ export const EventPage = () => {
         <Text>Begin: {startTime.slice(0,10)}, {startTime.slice(11,16)}</Text>
         <Text>Einde: {endTime.slice(0,10)}, {endTime.slice(11,16)}</Text>
         <Text color= {'green.500'}>categories: {event.categoryIds.join()}</Text>
-        <Text>{users.find((user)=>user.id==event.createdBy).name}</Text>
-        <Image src={users.find((user)=>user.id==event.createdBy).image} w={200} h={200} borderRadius={'md'} m={2}></Image>
+        <Text>{users.find((user)=>user.id==createdBy).name}</Text>
+        <Image src={users.find((user)=>user.id==createdBy).image} w={200} h={200} borderRadius={'md'} m={2}></Image>
         
 
       </Box>
