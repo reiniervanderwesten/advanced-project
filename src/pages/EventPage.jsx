@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Text, Image, Flex, Box, Button, Stack, Input, NumberInput, NumberInputField, FormControl, FormLabel} from '@chakra-ui/react';
+import { Heading, Text, Image, Flex, Box, Button, Stack, Input, NumberInput, NumberInputField, FormControl, FormLabel, useToast} from '@chakra-ui/react';
 import {Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure} from '@chakra-ui/react'
 import {Link as ReactRouterLink, useLoaderData, useNavigate} from 'react-router-dom';
 import { useState } from 'react';
@@ -15,6 +15,7 @@ export const EventPage = () => {
   const {users, event}=useLoaderData();
   const navigate=useNavigate();
   const {isOpen, onOpen, onClose}=useDisclosure();
+  const toast=useToast();
 
   const [created,setCreated]= useState('');
   const [titel, setTitel]= useState('');
