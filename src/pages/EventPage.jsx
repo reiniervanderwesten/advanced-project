@@ -29,6 +29,7 @@ export const EventPage = () => {
   const [title, setTitle]=useState(event.title);
   const [description, setDescription]= useState(event.description);
   const [image, setImage]=useState(event.image);
+  const [categoryIds, setCategoryIds]=useState(event.categoryIds)
   const [startTime, setStartTime]= useState(event.startTime);
   const [endTime, setEndTime]=useState(event.endTime);
 
@@ -66,6 +67,7 @@ export const EventPage = () => {
     setTitle(titel);
     setDescription(beschrijving);
     setImage(afbeelding);
+    setCategoryIds(categorieNummers);
     setStartTime(starttijd);
     setEndTime(eindtijd);
 
@@ -95,8 +97,7 @@ export const EventPage = () => {
   
   return (
     <Flex h="fit-content" w="100" flexDir={'column'} mt={2}>
-      <Heading m={4}>Events</Heading>
-      <Heading m={4}>test</Heading>
+      <Heading m={4}>Events</Heading>      
       
       <Box alignSelf={'center'}>
         <Text>{title}</Text>
@@ -104,7 +105,7 @@ export const EventPage = () => {
         <Image src={image} w={200} h={200} borderRadius={'md'} m={2}></Image>
         <Text>Begin: {startTime.slice(0,10)}, {startTime.slice(11,16)}</Text>
         <Text>Einde: {endTime.slice(0,10)}, {endTime.slice(11,16)}</Text>
-        <Text color= {'green.500'}>categories: {event.categoryIds.join()}</Text>
+        <Text color= {'green.500'}>categories: {categoryIds.join()}</Text>
         <Text>{users.find((user)=>user.id==createdBy).name}</Text>
         <Image src={users.find((user)=>user.id==createdBy).image} w={200} h={200} borderRadius={'md'} m={2}></Image>
         

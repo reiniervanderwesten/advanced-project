@@ -137,16 +137,17 @@
     },
     {
       "id": "69dd",
-      "createdBy": 1,
-      "title": "dd",
-      "description": "nadia",
+      "createdBy": 2,
+      "title": "juist",
+      "description": "en nu",
       "image": "https://wincacademy.github.io/webpages/media/pexels-viktoria-alipatova-1083711-2130137.jpg",
       "categoryIds": [
-        1
+        2,
+        3
       ],
-      "location": "haven",
-      "startTime": "2025-05-02T14:27",
-      "endTime": "2025-06-06T14:27"
+      "location": "hier thuis",
+      "startTime": "2025-06-03T14:51",
+      "endTime": "2025-07-25T14:51"
     }
   ],
   "categories": [
