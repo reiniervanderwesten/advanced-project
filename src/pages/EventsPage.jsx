@@ -63,9 +63,9 @@ export const EventsPage = () => {
   return (
     <Flex h='fit-content' w='100%' flexDir= {'column'} mb={2}>
       <Heading m={4}>lists of events</Heading>
-      <Input variant= {'outline'} w={250} m={4} placeholder={"search on title"} onChange={handleNaam}></Input>
+      <Input variant= {'outline'} w={250} m={4} placeholder={"search on title for event"} onChange={handleNaam}></Input>
       <Text m={4}>{resultaten}</Text>
-      <Input variant={'outline'} w={250} m={4} alignSelf={'center'} placeholder="filter on category" onChange={handleChange} ></Input>
+      <Input variant={'outline'} w={250} m={4}  placeholder="filter on category" onChange={handleChange} ></Input>
       <Flex gap={4} ml={4} width={'100%'} flexDir={'column'} flexWrap={'wrap'} alignContent={'flex-start'}>
         {matchedEvents.map((event)=>(
           <Box key={event.id} padding={3} w={250} borderWidth='2px' borderColor={'red.200'}>
