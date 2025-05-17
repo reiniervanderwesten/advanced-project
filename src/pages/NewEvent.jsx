@@ -76,24 +76,24 @@ export const NewEvent=()=>{
 
             <form onSubmit={handleSubmit}>
                 <NumberInput>
-                    <NumberInputField variant={'outline'} placeholder={'number created by'} w= {250} value={created} onChange={e=>setCreated(e.target.value)} required="required"/>
+                    <NumberInputField m={3} variant={'outline'} placeholder={'number created by'} w= {250} value={created} onChange={e=>setCreated(e.target.value)} required="required"/>
                 </NumberInput>
 
-                <Input display= {'inline-block'} tpe= "text" variant={'outline'} type="text" placeholder={'title'} w={250} value={title} onChange={e=>setTitle(e.target.value)} required="required"></Input>
+                <Input m={3} display= {'inline-block'} tpe= "text" variant={'outline'} type="text" placeholder={'title'} w={250} value={title} onChange={e=>setTitle(e.target.value)} required="required"></Input>
 
-                <Input variant={'outline'} type="text" placeholder={'description'} w={250} value={description} onChange={e=>setDescription(e.target.value)} required="required"></Input>
+                <Input m={3} variant={'outline'} type="text" placeholder={'description'} w={250} value={description} onChange={e=>setDescription(e.target.value)} required="required"></Input>
 
-                <Input variant={'outline'} type='url' placeholder={'link to image'} w={250} value={image} onChange={e=>setImage(e.target.value)} required="required"></Input>
+                <Input m={3} variant={'outline'} type='url' placeholder={'link to image'} w={250} value={image} onChange={e=>setImage(e.target.value)} required="required"></Input>
 
-                <Input variant={'outline'} type='text' placeholder={'belongs to category(ies)'} w={250} value={category} onChange={e=>setCategory(e.target.value)} required="required"></Input>
+                <Input m={3} variant={'outline'} type='text' placeholder={'belongs to category(ies)'} w={250} value={category} onChange={e=>setCategory(e.target.value)} required="required"></Input>
 
-                <Input variant={'outline'} type='text' placeholder={'location'} w={250} value={location} onChange={e=>setLocation(e.target.value)} required="required"></Input>
-                <FormControl>
+                <Input m={3} variant={'outline'} type='text' placeholder={'location'} w={250} value={location} onChange={e=>setLocation(e.target.value)} required="required"></Input>
+                <FormControl m={3}>
                     <FormLabel>Starttijd</FormLabel>
                     <Input variant={'outline'} type={'datetime-local'}  w={250} value={startTime} onChange={e=>setStartTime(e.target.value)} required="required"></Input>
                 </FormControl>
 
-                <FormControl>
+                <FormControl m={3}>
                     <FormLabel>Eindtijd</FormLabel>
                     <Input variant={'outline'} type={'datetime-local'} w={250} value={endTime} onChange={e=>setEndTime(e.target.value)} required="required"></Input>
                 </FormControl>

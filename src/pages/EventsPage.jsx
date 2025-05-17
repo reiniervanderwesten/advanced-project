@@ -1,7 +1,7 @@
 import React from 'react';
-import { Heading, Link as ChakraLink, Flex, Box, Input, Text, Image } from '@chakra-ui/react';
-import {Link as ReactRouterLink, useLoaderData} from 'react-router-dom';
-import { useState } from 'react';
+import { Heading, Link as ChakraLink, Flex, Box, Input, Text, Image, Button } from '@chakra-ui/react';
+import {Link as ReactRouterLink, useLoaderData, useNavigate} from 'react-router-dom';
+import { useState} from 'react';
 
 export const loader=async()=>{
   const users= await fetch("http://localhost:3000/users");
@@ -19,6 +19,7 @@ export const EventsPage = () => {
   const {users, events, categories}= useLoaderData();
   const [searchField, setSearchField]=useState('');
   const [searchTitle, setSearchTitle]=useState('');
+  const navigate=useNavigate();
 
   let resultaten='';
 
@@ -59,12 +60,17 @@ export const EventsPage = () => {
     setSearchField(event.target.value);
   };
 
+  const handleNewEvent=()=>{
+    navigate('/event/new')
+  }
+
   
   return (
     <Flex h='fit-content' w='100%' flexDir= {'column'} mb={2}>
       <Heading m={4}>lists of events</Heading>
-      <Input variant= {'outline'} w={250} m={4} placeholder={"search on title for event"} onChange={handleNaam}></Input>
+      <Input variant= {'outline'} w={250} m={4} placeholder={"search on title for event"} onChange={handleNaam}></Input>      
       <Text m={4}>{resultaten}</Text>
+      <Button m={4} w={250} onClick={()=>handleNewEvent()}>new event</Button>
       <Input variant={'outline'} w={250} m={4}  placeholder="filter on category" onChange={handleChange} ></Input>
       <Flex gap={4} ml={4} width={'100%'} flexDir={'column'} flexWrap={'wrap'} alignContent={'flex-start'}>
         {matchedEvents.map((event)=>(
