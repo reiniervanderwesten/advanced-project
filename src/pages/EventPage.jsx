@@ -135,6 +135,7 @@ export const EventPage = () => {
       </Box>
 
       <Stack m={4} >
+        <Heading m={3}>Edit data on event</Heading>
         <form onSubmit={handleSubmit}>
           <NumberInput m={2}>
             <NumberInputField variant={'outline'} placeholder={'number created by'} w={250} value={created} onChange={e=>setCreated(e.target.value)} required="required"/>
