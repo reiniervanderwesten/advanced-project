@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { EventPage, loader as eventPageLoader } from './pages/EventPage';
@@ -31,10 +31,21 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
+const theme=extendTheme({
+  breakpoints: {
+    base: '0px',
+    sm: '175px',
+    md: '300px',
+    lg: '766px',
+  },
+
+})
+
 // @ts-ignore
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <RouterProvider router={router} />
     </ChakraProvider>
   </React.StrictMode>,
