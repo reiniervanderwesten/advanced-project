@@ -119,7 +119,7 @@ export const EventPage = () => {
   
   return (
     <Flex h="fit-content" w="100" flexDir={'column'} mt={2}>
-      <Heading m={4}>Events</Heading>      
+      <Heading m={4}>Event</Heading>      
       
       <Box alignSelf={'center'}>
         <Text>{title}</Text>

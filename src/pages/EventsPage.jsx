@@ -16,7 +16,7 @@ export const loader=async()=>{
 };
 
 export const EventsPage = () => {
-  const {users, events, categories}= useLoaderData();
+  const { events}= useLoaderData();
   const [searchField, setSearchField]=useState('');
   const [searchTitle, setSearchTitle]=useState('');
   const navigate=useNavigate();
@@ -66,13 +66,13 @@ export const EventsPage = () => {
 
   
   return (
-    <Flex h='fit-content' w='100%' flexDir= {'column'} mb={2}>
+    <Flex h='fit-content' w='90%' flexDir= {'column'} mb={2}>
       <Heading m={4}>lists of events</Heading>
       <Input variant= {'outline'} w={250} m={4} placeholder={"search on title for event"} onChange={handleNaam}></Input>      
       <Text m={4}>{resultaten}</Text>
       <Button m={4} w={250} onClick={()=>handleNewEvent()}>new event</Button>
       <Input variant={'outline'} w={250} m={4}  placeholder="filter on category" onChange={handleChange} ></Input>
-      <Flex gap={4} ml={4} width={'100%'} flexDir={'column'} flexWrap={'wrap'} alignContent={'flex-start'}>
+      <Flex gap={4} ml={4} width={'100%'} flexDir={'row'} flexWrap={'wrap'} alignContent={'flex-start'}>
         {matchedEvents.map((event)=>(
           <Box key={event.id} padding={3} w={250} borderWidth='2px' borderColor={'red.200'}>
             <ChakraLink as={ReactRouterLink} to= {`event/${event.id}`} color={'blue'}>{event.title}</ChakraLink>
