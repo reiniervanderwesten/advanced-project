@@ -124,7 +124,7 @@ export const EventPage = () => {
       <Box alignSelf={'center'}>
         <Text>{title}</Text>
         <Text>{description}</Text>
-        <Image src={image} w={200} h={200} borderRadius={'md'} m={2}></Image>
+        <Image src={image} w={240} h={240} borderRadius={'md'} m={2}></Image>
         <Text>Begin: {startTime.slice(0,10)}, {startTime.slice(11,16)}</Text>
         <Text>Einde: {endTime.slice(0,10)}, {endTime.slice(11,16)}</Text>
         <Text color= {{sm: 'green.500', md: 'red.200', lg: 'blue.600'}}>categories: {categoryIds.join()}</Text>
