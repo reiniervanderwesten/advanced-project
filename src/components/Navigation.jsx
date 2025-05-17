@@ -7,13 +7,13 @@ export const Navigation = () => {
     <nav>
       <ul>
         <li>
-          <ChakraLink color= 'red' as={ReactRouterLink}  to="/">Events</ChakraLink>
+          <ChakraLink  m={4} color= 'red' as={ReactRouterLink}  to="/">Events</ChakraLink>
         </li>
         <li>
-          <ChakraLink color= 'red'as={ReactRouterLink} to="/event/1">Event</ChakraLink>
+          <ChakraLink m={4}  color= 'red'as={ReactRouterLink} to="/event/1">Event</ChakraLink>
         </li>
         <li>
-          <ChakraLink color= 'red'as={ReactRouterLink} to="/event/new">New Event</ChakraLink>
+          <ChakraLink m={4} color= 'red'as={ReactRouterLink} to="/event/new">New Event</ChakraLink>
         </li>
       </ul>
     </nav>
