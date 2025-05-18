@@ -137,16 +137,16 @@
     },
     {
       "id": "69dd",
-      "createdBy": 2,
-      "title": "ff",
-      "description": "ddf",
-      "image": "https://wincacademy.github.io/webpages/media/pexels-viktoria-alipatova-1083711-2130137.jpg",
+      "createdBy": 3,
+      "title": "ajax",
+      "description": "kampioen",
+      "image": "https://wincacademy.github.io/webpages/media/pexels-rnnzeravac-9273055.jpg",
       "categoryIds": [
-        1
+        2
       ],
       "location": "jjg",
-      "startTime": "2025-05-02T18:22",
-      "endTime": "2025-05-30T18:22"
+      "startTime": "2025-05-17T12:23",
+      "endTime": "2025-05-29T12:23"
     }
   ],
   "categories": [

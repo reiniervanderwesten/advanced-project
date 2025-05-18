@@ -21,8 +21,7 @@ export const EventPage = () => {
   const [titel, setTitel]= useState('');
   const [beschrijving, setBeschrijving]= useState('');
   const [afbeelding, setAfbeelding]=useState('');
-  const [category, setCategory]=useState('');
-  const [locatie, setlocatie]= useState('');
+  const [category, setCategory]=useState('');  
   const [starttijd, setStarttijd]= useState('');
   const [eindtijd, setEindtijd]= useState('');
 
@@ -56,8 +55,7 @@ export const EventPage = () => {
           title: titel,
           description: beschrijving,
           image: afbeelding,
-          categoryIds: categorieNummers,
-          location: locatie,
+          categoryIds: categorieNummers,          
           startTime: starttijd,
           endTime: eindtijd
         
@@ -98,8 +96,7 @@ export const EventPage = () => {
     setTitel("");
     setBeschrijving("");
     setAfbeelding("");
-    setCategory("");
-    setlocatie("");
+    setCategory("");    
     setStarttijd("");
     setEindtijd("");
   }
@@ -144,7 +141,7 @@ export const EventPage = () => {
           <Input variant={'outline'} type="text" placeholder={'description'} w={250} value={beschrijving} onChange={e=>setBeschrijving(e.target.value)} required="required" m={2}></Input>
           <Input variant={'outline'} type="url" placeholder={'link to image'} w={250} value={afbeelding} onChange={e=>setAfbeelding(e.target.value)} required="required" m={2}></Input>
           <Input variant={'outline'} type="text" placeholder={'catgories'} w={250} value={category} onChange={e=>setCategory(e.target.value)} required="required" m={2}></Input>
-          <Input variant={'outline'} type="text" placeholder={'location'} w={250} value={locatie} onChange={e=>setlocatie(e.target.value)} required="required" m={2}></Input>
+          
           <FormControl>
 
             <FormLabel>Starttijd</FormLabel>
