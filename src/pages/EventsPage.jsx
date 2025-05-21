@@ -74,7 +74,7 @@ export const EventsPage = () => {
       <Input variant={'outline'} w={250} m={4}  placeholder="filter on category" onChange={handleChange} ></Input>
       <Flex gap={4} ml={4} width={'100%'} flexDir={'row'} flexWrap={'wrap'} alignContent={'flex-start'}>
         {matchedEvents.map((event)=>(
-          <Box key={event.id} padding={3} w={250} borderWidth='2px' borderColor={'red.200'}>
+          <ChakraLink as= {ReactRouterLink} to={`event/${event.id}`} key={event.id} padding={3} w={250} borderWidth='2px' borderColor={'red.200'}>
             <ChakraLink as={ReactRouterLink} to= {`event/${event.id}`} color={'blue'}>{event.title}</ChakraLink>
             <Text>{event.description}</Text>
             <Image src={event.image} w={100} h={100} borderRadius={'md'} m={2}></Image>
@@ -83,7 +83,7 @@ export const EventsPage = () => {
             <Text color={'green.500'}>categories: {event.categoryIds.join()}</Text>
             
 
-          </Box>
+          </ChakraLink>
 
         ))}
       </Flex>
