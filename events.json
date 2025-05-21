@@ -147,6 +147,19 @@
       "location": "jjg",
       "startTime": "2025-05-17T12:23",
       "endTime": "2025-05-29T12:23"
+    },
+    {
+      "id": "176c",
+      "createdBy": 1,
+      "title": "opmerking",
+      "description": "ffdd",
+      "image": "https://wincacademy.github.io/webpages/media/pexels-floriandoppler-3207474.jpg",
+      "categoryIds": [
+        2
+      ],
+      "location": "leiden",
+      "startTime": "2025-05-22T20:14",
+      "endTime": "2025-05-23T20:14"
     }
   ],
   "categories": [

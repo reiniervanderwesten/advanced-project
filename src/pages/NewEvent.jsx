@@ -95,7 +95,7 @@ export const NewEvent=()=>{
 
                 <FormControl m={3}>
                     <FormLabel>Eindtijd</FormLabel>
-                    <Input variant={'outline'} type={'datetime-local'} w={250} value={endTime} onChange={e=>setEndTime(e.target.value)} required="required"></Input>
+                    <Input variant={'outline'} type={'datetime-local'} w={250} value={endTime} min= {startTime} onChange={e=>setEndTime(e.target.value)} required="required"></Input>
                 </FormControl>
 
                 

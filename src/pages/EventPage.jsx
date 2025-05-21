@@ -153,7 +153,7 @@ export const EventPage = () => {
 
           <FormControl>
             <FormLabel>Eindtijd</FormLabel>
-            <Input variant={'outline'} type={'datetime-local'} w={250} value={eindtijd} onChange={e=> setEindtijd(e.target.value)} required="required" m={2}></Input>
+            <Input variant={'outline'} type={'datetime-local'} min={starttijd} w={250} value={eindtijd} onChange={e=> setEindtijd(e.target.value)} required="required" m={2}></Input>
 
           </FormControl>
           
