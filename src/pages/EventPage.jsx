@@ -18,7 +18,7 @@ export const EventPage = () => {
   const toast=useToast();
 
   const [created,setCreated]= useState('');
-  const [titel, setTitel]= useState('');
+  let [titel, setTitel]= useState('');
   const [beschrijving, setBeschrijving]= useState('');
   const [afbeelding, setAfbeelding]=useState('');
   const [category, setCategory]=useState('');  
@@ -85,7 +85,13 @@ export const EventPage = () => {
     
 
     setCreatedBy(gemaaktDoor);
-    setTitle(titel);
+    if (titel==''){
+      setTitle(title);
+    }
+
+    else{
+      setTitle(titel);
+    }
     setDescription(beschrijving);
     setImage(afbeelding);
     setCategoryIds(categorieNummers);
@@ -137,7 +143,7 @@ export const EventPage = () => {
           <NumberInput m={2}>
             <NumberInputField variant={'outline'} placeholder={'number created by'} w={250} value={created} onChange={e=>setCreated(e.target.value)} required="required"/>
           </NumberInput>
-          <Input variant={'outline'} type='text' placeholder='title' w={250} value={titel} onChange={e=>setTitel(e.target.value)} required="required" m={2}></Input>
+          <Input variant={'outline'} type='text'  placeholder="title" w={250} value={titel} onChange={e=>setTitel(e.target.value)}  m={2}></Input>
           <Input variant={'outline'} type="text" placeholder={'description'} w={250} value={beschrijving} onChange={e=>setBeschrijving(e.target.value)} required="required" m={2}></Input>
           <Input variant={'outline'} type="url" placeholder={'link to image'} w={250} value={afbeelding} onChange={e=>setAfbeelding(e.target.value)} required="required" m={2}></Input>
           <Input variant={'outline'} type="text" placeholder={'catgories'} w={250} value={category} onChange={e=>setCategory(e.target.value)} required="required" m={2}></Input>

@@ -137,16 +137,16 @@
     },
     {
       "id": "69dd",
-      "createdBy": 3,
-      "title": "ajax",
-      "description": "kampioen",
-      "image": "https://wincacademy.github.io/webpages/media/pexels-rnnzeravac-9273055.jpg",
+      "createdBy": 2,
+      "title": "psv",
+      "description": "ewet",
+      "image": "https://wincacademy.github.io/webpages/media/pexels-viktoria-alipatova-1083711-2130137.jpg",
       "categoryIds": [
-        2
+        3
       ],
       "location": "jjg",
-      "startTime": "2025-05-17T12:23",
-      "endTime": "2025-05-29T12:23"
+      "startTime": "2025-05-01T16:31",
+      "endTime": "2025-05-29T16:31"
     },
     {
       "id": "176c",
