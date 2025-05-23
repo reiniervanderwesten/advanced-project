@@ -15,15 +15,7 @@ export const EventPage = () => {
   const {users, event}=useLoaderData();
   const navigate=useNavigate();
   const {isOpen, onOpen, onClose}=useDisclosure();
-  const toast=useToast();
-
-  const [created,setCreated]= useState('');
-  let [titel, setTitel]= useState('');
-  const [beschrijving, setBeschrijving]= useState('');
-  const [afbeelding, setAfbeelding]=useState('');
-  const [category, setCategory]=useState('');  
-  const [starttijd, setStarttijd]= useState('');
-  const [eindtijd, setEindtijd]= useState('');
+  const toast=useToast();  
 
   const [createdBy, setCreatedBy]=useState(event.createdBy);
   const [title, setTitle]=useState(event.title);
@@ -32,6 +24,14 @@ export const EventPage = () => {
   const [categoryIds, setCategoryIds]=useState(event.categoryIds)
   const [startTime, setStartTime]= useState(event.startTime);
   const [endTime, setEndTime]=useState(event.endTime);
+
+  const [created,setCreated]= useState(createdBy);
+  const [titel, setTitel]= useState(title);
+  const [beschrijving, setBeschrijving]= useState(description);
+  const [afbeelding, setAfbeelding]=useState(image);
+  const [category, setCategory]=useState('');  
+  const [starttijd, setStarttijd]= useState('');
+  const [eindtijd, setEindtijd]= useState('');
 
   const handleSubmit= (eventt)=>{
     
@@ -94,13 +94,7 @@ export const EventPage = () => {
     setStartTime(starttijd);
     setEndTime(eindtijd);
 
-    setCreated("");
-    setTitel("");
-    setBeschrijving("");
-    setAfbeelding("");
-    setCategory("");    
-    setStarttijd("");
-    setEindtijd("");
+    
   }
 
   
@@ -139,7 +133,7 @@ export const EventPage = () => {
           <NumberInput m={2}>
             <NumberInputField variant={'outline'} placeholder={'number created by'} w={250} value={created} onChange={e=>setCreated(e.target.value)} required="required"/>
           </NumberInput>
-          <Input variant={'outline'} type='text'  placeholder="title" w={250} value={titel} onChange={e=>setTitel(e.target.value)}  m={2}></Input>
+          <Input variant={'outline'} type='text'  defaultValue={title} w={250} value={titel} onChange={e=>setTitel(e.target.value)}  m={2}></Input>
           <Input variant={'outline'} type="text" placeholder={'description'} w={250} value={beschrijving} onChange={e=>setBeschrijving(e.target.value)}  m={2}></Input>
           <Input variant={'outline'} type="url" placeholder={'link to image'} w={250} value={afbeelding} onChange={e=>setAfbeelding(e.target.value)}  m={2}></Input>
           <Input variant={'outline'} type="text" placeholder={'catgories'} w={250} value={category} onChange={e=>setCategory(e.target.value)} required="required" m={2}></Input>
