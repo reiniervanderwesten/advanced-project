@@ -169,10 +169,10 @@ export const EventPage = () => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Confirm your Delete</ModalHeader>
+          <ModalHeader>are you Sure?</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>Delete </Text>
+            <Text>This action cannot be undone </Text>
           </ModalBody>
 
           <ModalFooter>
