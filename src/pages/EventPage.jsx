@@ -30,8 +30,8 @@ export const EventPage = () => {
   const [beschrijving, setBeschrijving]= useState(description);
   const [afbeelding, setAfbeelding]=useState(image);
   const [category, setCategory]=useState('');  
-  const [starttijd, setStarttijd]= useState('');
-  const [eindtijd, setEindtijd]= useState('');
+  const [starttijd, setStarttijd]= useState(startTime);
+  const [eindtijd, setEindtijd]= useState(endTime);
 
   const handleSubmit= (eventt)=>{
     
