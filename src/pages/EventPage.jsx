@@ -34,7 +34,7 @@ export const EventPage = () => {
   const [starttijd, setStarttijd]= useState(startTime);
   const [eindtijd, setEindtijd]= useState(endTime);
 
-  const [selectOption, setSelectedOption]=useState('0');
+  const [selectOption, setSelectOption]=useState('0');
 
   
 
@@ -119,7 +119,7 @@ export const EventPage = () => {
   
   return (
     <Flex h="fit-content" w="100" flexDir={'column'} mt={2}>
-      <Heading m={4}>Event</Heading>      
+      <Heading m={4}>Event, {selectOption}</Heading>      
       
       <Box alignSelf={'center'}>
         <Text>{title}</Text>
@@ -160,7 +160,7 @@ export const EventPage = () => {
 
           </FormControl>
 
-          <Select placeholder="simple item" w={250} >
+          <Select placeholder="simple item" w={250} value={selectOption} onChange={e=>setSelectOption(e.target.value)} >
             <option value="1">value 1</option>
             <option value="2">value 2</option>
             <option value="3">value 3</option>
