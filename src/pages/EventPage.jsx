@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heading, Text, Image, Flex, Box, Button, Stack, Input, NumberInput, NumberInputField, FormControl, FormLabel, useToast} from '@chakra-ui/react';
+import { Select } from "@chakra-ui/react"
 import {Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure} from '@chakra-ui/react'
 import {Link as ReactRouterLink, useLoaderData, useNavigate} from 'react-router-dom';
 import { useState } from 'react';
@@ -32,6 +33,12 @@ export const EventPage = () => {
   const [category, setCategory]=useState('');  
   const [starttijd, setStarttijd]= useState(startTime);
   const [eindtijd, setEindtijd]= useState(endTime);
+
+  const [selectOption, setSelectedOption]=useState('0');
+
+  
+
+  
 
   const handleSubmit= (eventt)=>{
     
@@ -152,6 +159,19 @@ export const EventPage = () => {
             <Input variant={'outline'} type={'datetime-local'} min={starttijd} w={250} value={eindtijd} onChange={e=> setEindtijd(e.target.value)} required="required" m={2}></Input>
 
           </FormControl>
+
+          <Select placeholder="simple item" w={250} >
+            <option value="1">value 1</option>
+            <option value="2">value 2</option>
+            <option value="3">value 3</option>
+
+          </Select>
+
+
+                  
+
+          
+          
           
           
           <Button margin={4} type="submit">Edit</Button>
