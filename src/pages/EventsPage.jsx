@@ -56,6 +56,11 @@ export const EventsPage = () => {
 
   }
 
+  const spiegelEvents=matchedEvents.filter((match)=>{
+    return match.title.toLowerCase().includes(searchTitle)
+  });
+  console.log(spiegelEvents);
+
   const handleChange=(event)=>{
     setSearchField(event.target.value);
   };
