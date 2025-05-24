@@ -59,7 +59,7 @@ export const EventsPage = () => {
   const spiegelEvents=matchedEvents.filter((match)=>{
     return match.title.toLowerCase().includes(searchTitle)
   });
-  console.log(spiegelEvents);
+  
 
   const handleChange=(event)=>{
     setSearchField(event.target.value);
@@ -78,7 +78,7 @@ export const EventsPage = () => {
       <Button m={4} w={250} onClick={()=>handleNewEvent()}>new event</Button>
       <Input variant={'outline'} w={250} m={4}  placeholder="filter on category" onChange={handleChange} ></Input>
       <Flex gap={4} ml={4} width={'100%'} flexDir={'row'} flexWrap={'wrap'} alignContent={'flex-start'}>
-        {matchedEvents.map((event)=>(
+        {spiegelEvents.map((event)=>(
           <ChakraLink as= {ReactRouterLink} to={`event/${event.id}`} key={event.id} padding={3} w={250} borderWidth='2px' borderColor={'red.200'}>
             <ChakraLink as={ReactRouterLink} to= {`event/${event.id}`} color={'blue'}>{event.title}</ChakraLink>
             <Text>{event.description}</Text>
