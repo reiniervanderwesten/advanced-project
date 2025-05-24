@@ -34,7 +34,7 @@ export const EventPage = () => {
   const [starttijd, setStarttijd]= useState(startTime);
   const [eindtijd, setEindtijd]= useState(endTime);
 
-  const [selectOption, setSelectOption]=useState('0');
+  
 
   
 
@@ -119,7 +119,7 @@ export const EventPage = () => {
   
   return (
     <Flex h="fit-content" w="100" flexDir={'column'} mt={2}>
-      <Heading m={4}>Event, {selectOption}</Heading>      
+      <Heading m={4}>Event</Heading>      
       
       <Box alignSelf={'center'}>
         <Text>{title}</Text>
@@ -143,7 +143,7 @@ export const EventPage = () => {
           <Input variant={'outline'} type='text'  defaultValue={title} w={250} value={titel} onChange={e=>setTitel(e.target.value)}  m={2}></Input>
           <Input variant={'outline'} type="text" placeholder={'description'} w={250} value={beschrijving} onChange={e=>setBeschrijving(e.target.value)}  m={2}></Input>
           <Input variant={'outline'} type="url" placeholder={'link to image'} w={250} value={afbeelding} onChange={e=>setAfbeelding(e.target.value)}  m={2}></Input>
-          <Input variant={'outline'} type="text" placeholder={'catgories'} w={250} value={category} onChange={e=>setCategory(e.target.value)} required="required" m={2}></Input>
+          
           
           <FormControl>
 
@@ -160,10 +160,10 @@ export const EventPage = () => {
 
           </FormControl>
 
-          <Select placeholder="simple item" w={250} value={selectOption} onChange={e=>setSelectOption(e.target.value)} >
-            <option value="1">value 1</option>
-            <option value="2">value 2</option>
-            <option value="3">value 3</option>
+          <Select placeholder="simple item" w={250} value={category} onChange={e=>setCategory(e.target.value)} >
+            <option value="1">sports</option>
+            <option value="2">games</option>
+            <option value="3">relaxation</option>
 
           </Select>
 

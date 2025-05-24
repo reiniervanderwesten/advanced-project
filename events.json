@@ -137,12 +137,12 @@
     },
     {
       "id": "69dd",
-      "createdBy": 1,
+      "createdBy": 2,
       "title": "ajax",
       "description": "wint",
       "image": "https://i.pinimg.com/736x/3d/2f/af/3d2faf4e3188d34a9fcdc00df59e77b0.jpg",
       "categoryIds": [
-        2
+        1
       ],
       "location": "jjg",
       "startTime": "2025-05-16T17:47",
